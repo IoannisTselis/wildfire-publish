@@ -1,0 +1,431 @@
+html, body {
+  margin: 0;
+  height: 100%;
+}
+#map {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+}
+
+
+.raster-group {
+  margin-bottom: 10px;
+}
+
+.raster-group summary {
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 0;
+}
+
+.raster-layer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 5px 0;
+}
+
+.raster-layer label {
+  min-width: 70px;
+}
+
+.raster-layer input[type="range"] {
+  flex: 1;
+}
+
+#layerSwitches {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+
+  background: white;
+  padding: 15px;
+
+  border-radius: 5px;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+  z-index: 1000;
+
+  font-family: Arial, sans-serif;
+}
+
+#layerSwitches h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#layerSwitches h3 {
+  margin-bottom: 8px;
+}
+
+#layerSwitches label{
+  display: block;
+  margin-bottom: 8px;
+}
+
+
+#swipeControls {
+position: absolute;
+top: 10px;
+left: 300px;
+
+background: white;
+padding: 15px;
+
+border-radius: 5px;
+
+box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+
+z-index: 1000;
+
+font-family: Arial, sans-serif;
+
+display: flex;
+flex-direction: column;
+gap: 10px;
+}
+
+
+
+
+
+/*Quant analysis stuff */
+.analysis-panel {
+  display: none;
+}
+
+.analysis-panel.active {
+  display: block;
+  margin-left: 30px;
+  margin-bottom: 20px;
+}
+
+.analysis-panel h2 {
+  margin: 0 0 12px;
+}
+
+.top-level-view {
+  display: none;
+}
+.top-level-view.active {
+  display: block;
+}
+
+
+
+
+
+
+.main-navigation {
+  position: fixed;
+
+
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  gap: 6px;
+
+
+    z-index: 10000;
+}
+.main-nav-button {
+  cursor: pointer;
+
+  padding: 10px 18px;
+
+  font-size: 16px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+#quantitative-analysis {
+  width: 100%;
+  max-width: 1500px;
+
+  margin: 0 auto;
+  padding:  24px 40px;
+  box-sizing: border-box;
+}
+
+.analysis-header {
+  text-align: center;
+  margin: 10px 0 12px;
+}
+
+.analysis-header h1 {
+  margin: 0 0 8px;
+}
+
+#close-analysis {
+  cursor: pointer;
+}
+
+.analysis-tabs{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  margin: 0 0 16px;
+}
+
+.analysis-panel {
+  display: none;
+  margin: 0;
+}
+
+.analysis-panel.active {
+  display: block;
+}
+
+.analysis-panel h2 {
+  margin: 0 0 12px;
+}
+
+
+
+/* ---------------------------------------
+SPLIT VIEW
+----------------------------------------*/
+body.split-view #map-view {
+  display: block;
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 50%;
+  height: 100vh;
+}
+
+body.split-view #quantitative-analysis {
+  display: block;
+
+  position: fixed;
+
+  top: 0;
+  right: 0;
+
+  width: 50%;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  box-sizing: border-box;
+
+  background: white;
+  
+  padding: 60px 20px 40px;
+}
+
+body.split-view .analysis-header {
+  margin: 0 0 10px;
+}
+body.split-view .analysis-header h1 {
+  font-size: 24px;
+}
+body.split-view .analysis-tabs{
+  gap: 4px;
+  margin-bottom: 12px;
+}
+
+body.split-view .analysis-tab {
+  padding: 6px 8px;
+  font-size: 12px;
+}
+
+
+
+
+
+/* Table specifics */
+.analysis-table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.analysis-table th,
+.analysis-table td {
+  border: 1px solid #cccccc;
+  padding: 8px 10px;
+  text-align: left;
+}
+
+.analysis-table th {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+/* Keep if text should be in center*/
+.analysis-table td:not(:first-child),
+.analysis-table th:not(:first-child) {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+#burn-severity-table,
+#slope-table,
+#aspect-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+#burn-severity-table .analysis-table {
+  width: 100%;
+}
+#slope-table .analysis-table,
+#aspect-table .analysis-table {
+  width: 100%;
+  min-width: 1100px;
+}
+
+#burn-severity-table {
+  margin-bottom: 20px;
+}
+
+#slope-table {
+  margin-bottom: 20px;
+}
+
+#aspect-table {
+  margin-bottom: 20px;
+}
+
+
+#burn-severity-chart,
+#slope-chart,
+#aspect-chart {
+  width: 100%;
+  margin-top: 20px;
+}
+
+#burn-severity-chart {
+  height: 450px;
+}
+
+#slope-chart {
+  height: 500px;
+}
+
+#aspect-chart {
+  height: 500px;
+}
+
+
+
+
+.map-legend {
+  position: absolute;
+  right: 12px;
+  bottom: 36px;
+  width: 240px;
+  max-width: calc(100vw - 48px);
+  max-height: min(60vh, 420px);
+  overflow: hidden;
+  color: #222;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  font: 13px/1.4 system-ui, sans-serif;
+  z-index: 10;
+}
+
+.map-legend_toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 10px 12px;
+  border:  0;
+  background: #fff;
+  color: inherit;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+
+.map-legend_content {
+  padding: 9px 12px 12px;
+  max-height: calc(60vh - 45px);
+  overflow-y: auto;
+}
+
+.map-legend_content h2 {
+  margin: 4px 0 8px;
+  font-size: 14px;
+}
+
+.map-legend_unit {
+  margin: 0 0 6px;
+  color: #555;
+  font-size: 12px;
+}
+
+.map-legend_gradient {
+  height: 16px;
+  width: 100%;
+  border: 1px solid #888;
+  border-radius: 2px;
+}
+
+.map-legend_ramp-values {
+  display: flex;
+  justify-content: space-between;
+  gap: 4px;
+  margin-top: 4px;
+  font-size: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.map-legend_row {
+  display: grid;
+  grid-template-columns: 16px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.map-legend_swatch {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #888;
+  border-radius: 2px;
+}
+
+.map-legend_label {
+  overflow-wrap: anywhere;
+}
+
+.map-legend_code {
+  color: #667;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.map-legend.is-collapsed .map-legend_content {
+  display: none;
+}

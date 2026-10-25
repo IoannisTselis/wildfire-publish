@@ -1,0 +1,19 @@
+{
+  "name": "wildfire-map",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^7.1.11"
+  },
+  "dependencies": {
+    "chart.js": "^4.5.1",
+    "chat.js": "^1.0.2",
+    "ol": "^10.11.0",
+    "ol-ext": "^4.0.38",
+    "papaparse": "^5.7.0"
+  }
+}

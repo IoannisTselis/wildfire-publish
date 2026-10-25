@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kineta 2018 wildfire impact & regrowth</title>
+  </head>
+  <body>
+
+
+    <div id="application">
+
+
+         <nav class="main-navigation">
+
+          <button id="map-view-button" class="main-nav-button active">
+            Map
+          </button>
+
+          <button id="analysis-view-button" class="main-nav-button">
+            Quantitative Analysis
+          </button>
+
+          <button id="split-view-button" class="main-nav-button">
+            Split View
+          </button>
+
+      </nav>
+
+      <!--===============-->
+      <!--MAP VIEW-->
+      <!--===============-->
+    <section id="map-view" class="top-level-view active">
+
+      <div id="map">
+
+        <div id="layerSwitches">
+          <h2>Map Layers</h2>
+
+          <section class="layer-group">
+            <h3>Fire Effects</h3>
+
+            <label class="layer-toggle">
+              <input type="checkbox" id="BurnSeverityCheckbox" checked>
+              Burn Severity
+            </label>
+            <div id="dnbrControls"></div>
+          </section>
+
+
+
+
+          <!--Vegetation-->
+        <section class="layer-group">
+          <h3>Vegetation</h3>
+
+          <div id="ndviControls"></div>
+
+          <div id="nbrControls"></div>
+
+        </section>
+      
+        <section class="layer-group">
+          <h3>Terrain</h3>
+
+          <label class="layer-toggle">
+            <input type="checkbox" id="slopeCheckbox">
+            Slope (classified)
+          </label>
+
+          <label class="layer-toggle">
+            <input type="checkbox" id="aspectCheckbox">
+            Aspect (classified)
+          </label>
+        </section>
+
+        </div>
+
+        <div id="swipeControls">
+        <label>
+           Layer group:
+          <select id="swipeGroup">
+             <option value="ndvi">NDVI</option>
+            <option value="nbr">NBR</option>
+            <option value="dnbr">dNBR</option>
+          </select>
+        </label>
+
+        <label>
+           Left:
+          <select id="swipeLeft"></select>
+        </label>
+
+        <label>
+           Right:
+          <select id="swipeRight"></select>
+        </label>
+
+        <button id="swipeStart">
+           Start swipe
+        </button>
+
+        <button id="swipeStop">
+           Stop swipe
+        </button>
+
+        </div>
+      </div>
+
+
+
+      </section>
+
+
+
+
+
+      <!--=====================-->
+      <!--QUANTITATIVE ANALYSIS-->
+      <!--=====================-->
+
+     <section id="quantitative-analysis" class="top-level-view">
+      
+      <header class="analysis-header">
+
+        <h1>Quantitative Analysis</h1>
+
+      </header>
+
+
+
+      <nav class="analysis-tabs">
+
+        <button class="analysis-tab active"
+                data-analysis="burn-severity">
+              Burn Severity
+            </button>
+
+        <button class="analysis-tab"
+                data-analysis="slope">
+              Burn Severity × Slope
+            </button>
+
+        <button class="analysis-tab"
+                data-analysis="aspect">
+            Burn Severity × Aspect
+          </button>
+      </nav>
+
+
+      <!--BURN SEVERITY-->
+      <section id="burn-severity-analysis"
+                class="analysis-panel active">
+              
+          <h2>Burn Severity</h2>
+          
+          <div id="burn-severity-table"></div>
+
+          <div id="burn-severity-chart">
+            <canvas id="burn-severity-canvas"></canvas>
+          </div>  
+          
+      </section>
+
+
+      <!--SLOPE-->
+      <section id="slope-analysis"
+               class="analysis-panel">
+
+
+          <h2>Burn Severity × Slope</h2>
+
+          <div id="slope-table"> </div>
+
+          <div id="slope-chart">
+            <canvas id="slope-canvas"></canvas>
+          </div>
+
+      </section>
+
+
+      <!--ASPECT-->
+      <section id="aspect-analysis" 
+              class="analysis-panel">
+        
+              <h2>Burn Severity × Aspect</h2>
+
+        <div id="aspect-table"> </div>
+
+        <div id="aspect-chart">
+          <canvas id = "aspect-canvas"></canvas>
+        </div>
+
+      </section>
+
+
+      </section>
+
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
