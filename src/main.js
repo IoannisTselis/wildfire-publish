@@ -1,6 +1,6 @@
 import './style.css';
 import 'ol/ol.css';
-import '/ol-ext/dist/ol-ext.css';
+import 'ol-ext/dist/ol-ext.css';
 import {Map, View} from 'ol';
 import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
