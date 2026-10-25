@@ -68,9 +68,9 @@ export async function loadAnalysisData() {
         slope,
         aspect
     ] = await Promise.all([
-        loadCSV('./public/data/Burn_Severity_Area.csv'),
-        loadCSV('./public/data/BurnSeverity_X_Slope.csv'),
-        loadCSV('./public/data/BurnSeverity_X_Aspect.csv')
+        loadCSV('data/Burn_Severity_Area.csv'),
+        loadCSV('data/BurnSeverity_X_Slope.csv'),
+        loadCSV('data/BurnSeverity_X_Aspect.csv')
     ]);
 
     return {
