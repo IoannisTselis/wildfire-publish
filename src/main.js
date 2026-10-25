@@ -1,16 +1,16 @@
 import './style.css';
-import './.github/worflows/build.yml/ol/ol.css';
-import './.github/worflows/build.yml/ol-ext/dist/ol-ext.css';
-import {Map, View} from './.github/worflows/build.yml/ol';
-import TileLayer from './.github/worflows/build.yml/ol/layer/Tile';
-import OSM from './.github/worflows/build.yml/ol/source/OSM';
-import WebGLTileLayer from './.github/worflows/build.yml/ol/layer/WebGLTile.js'
-import GeoTIFF from './.github/worflows/build.yml/ol/source/GeoTIFF.js'
-import VectorLayer from './.github/worflows/build.yml/ol/layer/Vector.js';
-import VectorSource from './.github/worflows/build.yml/ol/source/Vector.js';
-import GeoJSON from './.github/worflows/build.yml/ol/format/GeoJSON.js';
-import Chart from './.github/worflows/build.yml/chart.js/auto';
-import {Style, Stroke, Fill} from './.github/worflows/build.yml/ol/style';
+import 'ol/ol.css';
+import '/ol-ext/dist/ol-ext.css';
+import {Map, View} from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+import WebGLTileLayer from 'ol/layer/WebGLTile.js'
+import GeoTIFF from 'ol/source/GeoTIFF.js'
+import VectorLayer from 'ol/layer/Vector.js';
+import VectorSource from 'ol/source/Vector.js';
+import GeoJSON from 'ol/format/GeoJSON.js';
+import Chart from 'chart.js/auto';
+import {Style, Stroke, Fill} from 'ol/style';
 import {loadAnalysisData} from './analysis/dataLoader.js'
 import {transformBurnSeverityData, transformSlopeData, transformAspectData} from './analysis/transformer.js';
 import {renderBurnSeverityTable, renderSlopeTable, renderAspectTable} from './analysis/tables.js';
