@@ -1,6 +1,6 @@
 import './style.css';
 import './.github/worflows/build.yml/ol/ol.css';
-import 'ol-ext/dist/ol-ext.css';
+import './.github/worflows/build.yml/ol-ext/dist/ol-ext.css';
 import {Map, View} from './.github/worflows/build.yml/ol';
 import TileLayer from './.github/worflows/build.yml/ol/layer/Tile';
 import OSM from './.github/worflows/build.yml/ol/source/OSM';
