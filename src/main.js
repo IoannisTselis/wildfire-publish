@@ -210,6 +210,7 @@ const map = new Map({
       osmLayer,
       //Fire Effects
       burnSeverityLayer,
+      ...Object.values(dnbrLayers),
       //Vegetation Layers
       ...Object.values(ndviLayers),
       ...Object.values(nbrLayers),
