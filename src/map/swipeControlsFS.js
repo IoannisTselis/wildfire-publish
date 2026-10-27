@@ -11,7 +11,7 @@ export function initialiseSwipeControls ({
 
 const layerCollections = {
   ndvi: ndviLayers,
-  nbr: nbrLayers,
+  nbr: nbrLayers
 };
 
 
