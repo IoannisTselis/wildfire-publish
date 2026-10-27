@@ -4,7 +4,6 @@ export function initialiseSwipeControls ({
     map,
     ndviLayers,
     nbrLayers,
-    dnbrLayers,
     burnSeverityLayer,
     terrainLayers
 }) {
@@ -13,14 +12,12 @@ export function initialiseSwipeControls ({
 const layerCollections = {
   ndvi: ndviLayers,
   nbr: nbrLayers,
-  dnbr: dnbrLayers
 };
 
 
 const allRasterLayers = [
   ...Object.values(ndviLayers),
   ...Object.values(nbrLayers),
-  ...Object.values(dnbrLayers),
   ...Object.values(terrainLayers),
   burnSeverityLayer
 ];
@@ -70,7 +67,6 @@ function syncAllCheckboxes() {
 
   Object.entries(nbrLayers).forEach(([date, layer]) => {updateLayerCheckbox('nbr', date, layer.getVisible()); });
 
-  Object.entries(dnbrLayers).forEach(([date, layer]) => {updateLayerCheckbox('dnbr', date, layer.getVisible()); });
 
 
 
