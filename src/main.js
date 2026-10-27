@@ -72,15 +72,6 @@ const burnSeverityLayer = createCOGLayer(
   false
 );
 
-//-----------------------------------------------------------------------------------
-//dNBR (cont)
-//-----------------------------------------------------------------------------------
-
-
-const dnbrLayers = {
-  '2018_08': createCOGLayer('dNBR', 'dNBR_2018_08_cog.tif'),
-};
-
 
 //-----------------------------------------------------------------------------------
 //NDVI layers
@@ -133,8 +124,7 @@ const terrainLayers = {
 
 const rasterLayerCollections = [
   ndviLayers,
-  nbrLayers,
-  dnbrLayers
+  nbrLayers
 ];
 
 rasterLayerCollections.forEach(collection => {
@@ -151,8 +141,6 @@ rasterLayerCollections.forEach(collection => {
 Object.values(ndviLayers).forEach(layer => {layer.setVisible(false); });
 
 Object.values(nbrLayers).forEach(layer => {layer.setVisible(false); });
-
-Object.values(dnbrLayers).forEach(layer => {layer.setVisible(false); });
 
 Object.values (terrainLayers).forEach(layer => {layer.setVisible(false); });
 
@@ -222,7 +210,6 @@ const map = new Map({
       osmLayer,
       //Fire Effects
       burnSeverityLayer,
-      ...Object.values(dnbrLayers),
       //Vegetation Layers
       ...Object.values(ndviLayers),
       ...Object.values(nbrLayers),
@@ -280,7 +267,6 @@ legendUI.showLegend('burnSeverity');
 initialiseLayerControls({
     ndviLayers,
     nbrLayers,
-    dnbrLayers,
     burnSeverityLayer,
     terrainLayers,
     onActiveLayerChange: updateLegendForLayers
@@ -295,7 +281,6 @@ initialiseSwipeControls({
     map,
     ndviLayers,
     nbrLayers,
-    dnbrLayers,
     burnSeverityLayer,
     terrainLayers
 });
