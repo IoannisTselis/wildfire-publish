@@ -83,6 +83,7 @@ function createRasterControls(
 export function initialiseLayerControls({
     ndviLayers,
     nbrLayers,
+    dnbrLayer,
     burnSeverityLayer,
     terrainLayers,
     onActiveLayerChange = () => {}
