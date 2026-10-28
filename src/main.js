@@ -71,14 +71,7 @@ const burnSeverityLayer = createCOGLayer(
   burnSeverityStyle,
   false
 );
-//-----------------------------------------------------------------------------------
-//dNBR (cont)
-//-----------------------------------------------------------------------------------
 
-
-const dnbrLayers = {
-  '2018_08': createCOGLayer('dNBR', 'dNBR_2018_08_cog.tif'),
-};
 
 //-----------------------------------------------------------------------------------
 //NDVI layers
@@ -217,7 +210,6 @@ const map = new Map({
       osmLayer,
       //Fire Effects
       burnSeverityLayer,
-      ...Object.values(dnbrLayers),
       //Vegetation Layers
       ...Object.values(ndviLayers),
       ...Object.values(nbrLayers),
