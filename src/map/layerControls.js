@@ -83,7 +83,6 @@ function createRasterControls(
 export function initialiseLayerControls({
     ndviLayers,
     nbrLayers,
-    dnbrLayer,
     burnSeverityLayer,
     terrainLayers,
     onActiveLayerChange = () => {}
@@ -105,7 +104,7 @@ export function initialiseLayerControls({
 
     {
       key:'burnSeverity',
-      layers: [...Object.values(dnbrLayers), burnSeverityLayer]
+      layers: [burnSeverityLayer]
     },
 
     {
@@ -170,6 +169,7 @@ createRasterControls(
   (layer, visible) =>
     updateLegend(layer, visible, 'nbr')
 );
+
 
 //Burn Severity checkbox
 const burnSeverityCheckbox = 
