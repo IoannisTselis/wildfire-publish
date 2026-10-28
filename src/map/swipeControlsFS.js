@@ -18,7 +18,6 @@ const layerCollections = {
 const allRasterLayers = [
   ...Object.values(ndviLayers),
   ...Object.values(nbrLayers),
-  ...Object.values(dnbrLayers),
   ...Object.values(terrainLayers),
   burnSeverityLayer
 ];
