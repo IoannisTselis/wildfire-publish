@@ -41,6 +41,7 @@ html, body {
   position: absolute;
   top: 10px;
   left: 10px;
+  anchor-name: --dropdown;
 
   background: white;
   padding: 15px;
@@ -71,8 +72,9 @@ html, body {
 
 #swipeControls {
 position: absolute;
-top: 10px;
-left: 500px;
+position-anchor: --dropdown;
+left: 10px;
+top: anchor(bottom);
 
 background: white;
 padding: 15px;
