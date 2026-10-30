@@ -141,7 +141,7 @@ gap: 10px;
 .main-nav-button {
   cursor: pointer;
 
-  padding: 10px 18px;
+  padding: 10px 20px;
 
   font-size: 16px;
   font-weight: bold;
@@ -163,7 +163,7 @@ gap: 10px;
 
 .analysis-header {
   text-align: center;
-  margin: 10px 0 12px;
+  margin: 25px 0 8px;
 }
 
 .analysis-header h1 {
@@ -180,7 +180,7 @@ gap: 10px;
   align-items: center;
   gap: 6px;
 
-  margin: 0 0 16px;
+  margin: 0 0 8px;
 }
 
 .analysis-panel {
